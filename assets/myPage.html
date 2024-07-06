@@ -1,0 +1,405 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width">
+<title>Ebook</title>
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	
+<audio id="title1">
+  <source src="audio/Title1.mp3" type="audio/mp3">
+</audio>
+<audio id="title">
+  <source src="audio/Title.mp3" type="audio/mp3">
+</audio>
+<audio id="apg34">
+  <source src="audio/34.mp3" type="audio/mp3">
+</audio>
+<audio id="apg56">
+  <source src="audio/56.mp3" type="audio/mp3">
+</audio>
+<audio id="apg78">
+  <source src="audio/78.mp3" type="audio/mp3">
+</audio>
+<audio id="apg910">
+  <source src="audio/910.mp3" type="audio/mp3">
+</audio>
+
+<video id="page1vid" class="animation" width="320" height="240"  >
+  <source src="video/Title Page.mp4" type="video/mp4">
+</video>
+<video id="page2vid" class="animation "   loop="true" autoplay>
+  <source src="video/Page_2.mp4" type="video/mp4">
+</video>
+<video id="page3vid" class="animation" width="320" height="240" loop="true" autoplay>
+  <source src="video/Page_3.mp4" type="video/mp4">
+</video>
+<video id="page4vid" class="animation"  loop="true" autoplay>
+  <source src="video/Page_4.mp4" type="video/mp4">
+</video>
+	<video id="page5vid" class="animation" width="320" height="240" loop="true" autoplay>
+  <source src="video/Page_5.mp4" type="video/mp4">
+</video>
+	<button id="startb" class="startbutton" onclick="myFunction();" ></button>
+	<div id="overlaybackground">
+		
+	</div>
+	
+	<img id="page1" class="backgroundImage" src="pages/book12pg01.png"/>
+	<img id="page2" class="backgroundImage" src="pages/book12pg02.png"/>
+	<img id="page3" class="backgroundImage" src="pages/book12pg03.png"/> 
+	<img id="page4" class="backgroundImage" src="pages/book12pg04.png"/> 
+	<img id="page5" class="backgroundImage" src="pages/book12pg05.png"/> 
+	<img id="page6" class="backgroundImage" src="pages/book12pg06.png"/> 
+	<img id="page7" class="backgroundImage" src="pages/book12pg07.png"/> 
+	<img id="page8" class="backgroundImage" src="pages/book12pg17.png"/>
+
+	
+<div id="controls">
+	
+  <input type="range" id="timeSlider" value="0" min="0" step="1" class="slider">
+  <div id="playBtn" onclick="PlayAudio()"></div>
+  <div id="pauseBtn" onclick="PauseAudio()"></div>
+  <div id="replayBtn" onclick="Replay()"></div>
+  <div id="prevBtn" onclick="GoPrev()"></div>
+  <div id="nextBtn" onclick="GoNext()"></div>
+</div>
+<div id="Page3" class="readingText">
+  <div id="myModal" class="modal" >
+    <div class="modal-content"> <span class="close">&times;</span> <img id="pic" src="pages/page_01.jpg" width="100%" height="auto"/> </div>
+  </div>
+  <p> 
+  <span id="sentence1">புதிய வீட்டுக்கு வந்ததும் கிடைத்த முதல் தோழி </span> 
+  <span id="sentence1a"><a href="#" id="myBtn_1">காந்தக்குரலாளைக்</a></span> 
+  <span id="sentence1b">கணவரிடமும்</span> 
+  <span id="sentence1c">மகளிடமும் </span> 
+  <span id="sentence1d">இன்று காட்டுவதாகச் சொல்லியிருக்கிறேன் </span> 
+  <span id="sentence2">என்ற நினைப்போடு</span> 
+  <span id="sentence2a">படுக்கையை விட்டு </span> 
+  <span id="sentence2b">எழுந்து</span> 
+  <span id="sentence2c">வெளியே வந்தாள் சீதா.</span> 
+  </p>
+  <p> 
+  <span id="sentence3">அன்று வாரயிறுதி என்பதால் </span> 
+  <span id="sentence3a">ஆதவனும் பொறுமையாக எழ </span> 
+  <span id="sentence3b">நினைத்துவிட்டானோ?</span> 
+  <span id="sentence4">கண்ணைப் பறிக்கும் விதமாக</span> 
+  <span id="sentence4a"><a href="#" id="myBtn_2">மின்னல் கீற்றுகள் வானில் கோலமிட்ட</a></span>
+  <span id="sentence5"> மறுநொடியில் </span> 
+  <span id="sentence5a">இடியோசை </span> 
+  <span id="sentence5b">காதுகளை அதிர வைத்தது.</span> 
+  <span id="sentence6">நான் மட்டும் சும்மா இருப்பேனா</span> 
+  <span id="sentence6a">என்று </span> 
+  <span id="sentence6b">காற்றும்</span> 
+  <span id="sentence6c">சுருதி சேர்க்க</span> 
+  <span id="sentence6d">அன்றைய விடியல்</span> 
+  <span id="sentence6e">சிலிர்ப்போடு மலர்ந்ததைச் </span> 
+  <span id="sentence6f">சீதா வெகுவாக ரசித்தாள்.</span> 
+  <span id="sentence6g">இந்நேரம் காந்தக்குரலாள்</span> 
+  <span id="sentence6h">வந்திருக்க வேண்டுமே!</span> 
+  </p>
+  <p> 
+  <span id="sentence7">கூடத்துச் <a href="#" id="myBtn_3">சாளரத்தைத்</a></span> 
+  <span id="sentence7a">திறப்பதற்காகவே காத்திருந்தாற்போலச்</span>
+  <span id="sentence7b">சாரல் வீட்டுக்குள் அடித்தது.</span>
+  <span id="sentence7c">காற்றில் வாகை மரம் சுழன்றாடியது.</span>
+  <span id="sentence7d">காற்றின் வேகத்தில்</span>  
+  <span id="sentence7e">மரம் முறிந்துவிடுமோ என்ற ஐயம்</span>  
+  <span id="sentence8">அவளுக்கு ஏற்பட்டது.</span> 
+  <span id="sentence8a">போனால் போகிறதெனச்</span> 
+  <span id="sentence8b">சாலையில் வாகனங்கள்</span> 
+  <span id="sentence8c">அவ்வப்போது </span> 
+  <span id="sentence8d">தலைகாட்டின.</span> 
+  <span id="sentence8e">இன்னும் காந்தக்குரலாளைக்</span> 
+  <span id="sentence9">காணவில்லையே</span> 
+  <span id="sentence9a">என்ற கவலை</span> 
+  <span id="sentence9b">அவளைச் சூழ்ந்தது.</span> 
+  </p>
+  
+</div>
+<div id="Page4" class="readingText">
+  <div id="myModal2" class="modal2" >
+    <div class="modal-content2"  > <span class="close2">&times;</span> <img id="pic2" src="pages/page_03.jpg" width="100%" height="auto"/> </div>
+  </div>
+  <p> 
+  <span id="sentence10">பதினைந்து ஆண்டுகளாக</span> 
+  <span id="sentence10a">ஜூரோங் வட்டாரத்தில்</span> 
+  <span id="sentence10b">நட்புகள் <a href="#" id="myBtn_4">புடைசூழ</a></span> 
+  <span id="sentence10c">வசித்த இனிமையான அனுபவத்தைப்</span> 
+  <span id="sentence11">புதிய வீட்டுக்காக</span> 
+  <span id="sentence11a">இழக்க நேர்ந்ததை எண்ணி </span> 
+  <span id="sentence11b">சீதாவின் மனம் சற்றே தவித்தது.</span> 
+  <span id="sentence11c">கடந்த ஞாயிற்றுக்கிழமைதான்</span>
+  <span id="sentence11d">புதிய வீட்டிற்குக் குடிபெயர்ந்தனர்.</span>
+  <span id="sentence12">வீட்டுக்கு வந்த மறுநாள்</span>
+  <span id="sentence12a">பணி, கல்லூரியெனக்</span> 
+  <span id="sentence12b">கணவரும் மகளும் கிளம்பிவிட்டனர். </span> 
+  <span id="sentence12c">சீதாவின் தனிமை </span> 
+  <span id="sentence13">அவளை <a href="#" id="myBtn_5">வாட்டியது.</a></span> 
+  <span id="sentence13a">தோழிகளை நினைத்துக்கொண்டே </span> 
+  <span id="sentence13b">இருக்கையில் சாய்ந்திருந்தாள்.</span>
+  </p> 
+  <p> 
+  <span id="sentence14">அவளது தனிமையைத் தகர்ப்பது போலக்</span>  
+  <span id="sentence14a">காற்றில் மிதந்து வந்த கீதம் </span>
+  <span id="sentence14b">கூடத்திலிருந்த சன்னலை நோக்கி </span>
+  <span id="sentence15">அவளை இழுத்தது.</span> 
+  <span id="sentence16">எவ்வளவு முயன்றும்</span> 
+  <span id="sentence17">குரலுக்குரியவளைச்</span>
+  <span id="sentence17a"> சீதாவால் அடையாளம் காண முடியவில்லை. </span>
+  <span id="sentence17b">அதன் பிறகு, </span>
+  <span id="sentence17c">தினமும் அவள் அழைப்பதும்</span>
+  <span id="sentence18">சீதா தேடுவதுமாகக் </span> 
+  <span id="sentence18a">காலைப்பொழுது இனிமையாகக் கழிந்தது. </span>
+  <span id="sentence18b">அந்நேரத்தில் </span>
+  <span id="sentence18c"><a href="#" id="myBtn_6">வானொலியில்</a> ஒலிபரப்பாகிற </span> 
+  <span id="sentence19">பாடல்கள்கூட அவளது காதுகளுக்கு </span> 
+  <span id="sentence19a">இனிமை சேர்க்கவில்லை. </span> 
+  </p>  
+  <p>
+  <span id="sentence20">கணவரும் மகளும் </span> 
+  <span id="sentence20a">ஓய்வாக இருக்கும் இன்று, </span>
+  <span id="sentence20b">தன்னைக் கவர்ந்த </span>
+  <span id="sentence21">காந்தக்குரலாளைப்பற்றிச் சொல்லி, </span>  
+  <span id="sentence21a">அவர்கள் <a href="#" id="myBtn_7">வியப்பதைக்</a> கண்டு </span> 
+  <span id="sentence22">ரசிக்க வேண்டுமெனச் </span>
+  <span id="sentence22a">சீதா காத்திருந்தாள்.</span> 
+  </p>
+</div>
+<div id="Page5" class="readingText">
+  <div id="myModal3" class="modal3" >
+    <div class="modal-content3"  > <span class="close3">&times;</span> <img id="pic3" src="pages/page_05.jpg" width="100%" height="auto"/> </div>
+  </div>
+  <p> 
+  <span id="sentence23">தீவிரமாக ஆடிய <a href="#" id="myBtn_8">களைப்பில்</a> </span> 
+  <span id="sentence23a">காற்றும் மழையும் சோர்ந்திருக்க,</span> 
+  <span id="sentence23b">காபியைத் துளித் துளியாய்ப் பருகியபடி </span>
+  <span id="sentence23c">சாலையைப் பார்வையால் </span>
+  <span id="sentence23d"><a href="#" id="myBtn_9">துழாவினாள்</a> சீதா. </span>
+  <span id="sentence23e">இடி இடித்தால் என்ன? </span>
+  <span id="sentence23f">மழை பெய்தால் எங்களுக்கென்ன? </span>
+  <span id="sentence23g">இந்தக் காற்று எங்களை </span>  
+  <span id="sentence24">என்ன செய்துவிட முடியும்</span> 
+  <span id="sentence24a">என்பது போலக் </span> 
+  <span id="sentence24b">காக்கைகள் அலட்சியமாகப் பறக்கத் தொடங்கின. </span> 
+  <span id="sentence25">மரங்களைவிட்டுப் </span> 
+  <span id="sentence25a">படபடத்த மைனாக்கள் </span> 
+  <span id="sentence25b">அடுக்குமாடிக் கட்டடத்தின் மேற்புறத்தில் </span> 
+  <span id="sentence25c">அமர்ந்து சிறகுகளை உலர்த்தின. </span> 
+  <span id="sentence26"><a href="#" id="myBtn_10">தேன்சிட்டுகள்</a> மரத்தின் உச்சிக்கு வந்து </span> 
+  <span id="sentence26a">தலையைச் சிலுப்பின. </span> 
+  <span id="sentence26b">இவ்வளவு நடக்கின்றன. </span> 
+  <span id="sentence26c">ஆனால், காந்தக்குரலாளைக் காணவில்லையே! </span> 
+  <span id="sentence26d">நேரம் ஓடுகிறதே! </span> 
+  </p>
+  <p>
+  <span id="sentence27">இந்நேரத்துக்கு </span> 
+  <span id="sentence27a"><a href="#" id="myBtn_11">மெதுவோட்டம்</a> போகும்</span> 
+  <span id="sentence27b">சீன முதிய தம்பதியினர்</span>   
+  <span id="sentence27c">இன்று நடைப்பயிற்சியில் இருந்தனர்.</span> 
+  <span id="sentence27d"> வெயில், மழை என்று பாராத </span> 
+  <span id="sentence27e">இவர்களது <a href="#" id="myBtn_12">கடமையுணர்ச்சிக்கு</a></span> 
+  <span id="sentence28"> ஓர் அளவில்லையா? </span> 
+  <span id="sentence28a">மறுபடியும் பார்வையை </span> 
+  <span id="sentence28b">அக்கம் பக்கத்தில் தெரிந்த </span>
+  <span id="sentence28c">மரங்களில் சுழலவிட்டாள். </span>  
+  <span id="sentence28d">கொட்டித் தீர்த்த மழையில் </span>
+  <span id="sentence28e">காந்தக்குரலாள் </span>
+  <span id="sentence28f">எங்குச் சென்றிருப்பாள்?</span>
+  <span id="sentence29">பலமாக வீசிய காற்றில் </span> 
+  <span id="sentence30">எங்காவது போய்விட்டாளோ?</span> 
+  </p>
+</div>
+<div id="Page6" class="readingText">
+  <div id="myModal4" class="modal4" >
+    <div class="modal-content4"  > <span class="close4">&times;</span> <img id="pic4" src="pages/page_06.jpg" width="100%" height="auto"/> </div>
+  </div>
+  <p> 
+  <span id="sentence31">“க்கூ... க்கூ....” </span> 
+  <span id="sentence31a">தன்னிருப்பைக் காந்தக்குரலாள் வெளிப்படுத்த </span>
+  <span id="sentence32">சீதாவின் உள்ளத்தில் </span>
+  <span id="sentence32a">உவகை பிறந்தது. </span> 
+  <span id="sentence32b">சாளரத்தின் வழியே பார்த்தாள். </span>
+  <span id="sentence33">மரங்கள் நன்றாகக் </span>
+  <span id="sentence33a">குளித்த மகிழ்வில் </span>
+  <span id="sentence34"><a href="#" id="myBtn_13">புத்துணர்ச்சியோடு</a> இருந்ததாக </span>
+  <span id="sentence34a">அவளுக்குத் தோன்றியது.</span>
+  </p>
+  <p>  
+  <span id="sentence35">“க்கூ... க்கூ....” </span> 
+  <span id="sentence36">காந்தம் போலக் கவர்ந்த </span>
+  <span id="sentence37">காந்தக்குரலாளின் குரலில்கூட</span> 
+  <span id="sentence37a"> இன்று அதிகத் துள்ளல் தெரிகிறதே</span> 
+  <span id="sentence38">மழையை அவளும் <a href="#" id="myBtn_14">ரசித்தாள்</a> போலும்</span>
+  <span id="sentence38a">என்று சீதா நினைத்தாள்.</span> 
+  </p>
+  <p>  
+  <span id="sentence39">“ஓ... இதுதான் உன்னோட தோழியா? </span> 
+  <span id="sentence39a">இதக் காட்டத்தான் இவ்வளவு ஆர்வமா இருந்தியா?” </span> 
+  <span id="sentence39b">தூங்கி எழுந்து வந்த கணவர்</span> 
+  <span id="sentence39c">சீதாவுடைய மகிழ்ச்சியைக் கண்டார். </span> 
+  <span id="sentence39d">காலையில் எழுந்தவுடன்</span> 
+  <span id="sentence39e">அந்தக் குரலின் இனிமை </span> 
+  <span id="sentence39f">அவருக்கும் புத்துணர்ச்சி அளித்தது.</span> 
+  </p>
+  <p> 
+  <span id="sentence40">“காந்தக்குரலாள் அம்மாவுக்கு மட்டும் தோழியில்லையப்பா </span> 
+  <span id="sentence40a">எனக்குந்தான்,” </span> 
+  <span id="sentence41">என்றவாறு “க்கூ... க்கூ...” </span>
+  <span id="sentence41a">என்று பதில் குரல்</span>
+  <span id="sentence41b">கொடுத்தாள் சீதாவின் மகள்.</span>
+  </p>
+  <p>
+  <span id="sentence42">“எனக்குந்தான்!” </span> 
+  <span id="sentence42a">என சீதாவின் கணவர் சொல்ல, </span> 
+  <span id="sentence43">மூவருமாகக் காந்தக்குரலாளைக் கண்டும்</span> 
+  <span id="sentence43a"> அவள் குரலைக் கேட்டும் மகிழ்ந்தார்கள்.</span> 
+  </p>
+</div>
+
+<script>
+	
+			var dummystore=0
+			var modal = document.getElementById("myModal");
+			var modal2 = document.getElementById("myModal2");
+			var modal3 = document.getElementById("myModal3");
+			var modal4 = document.getElementById("myModal4");
+			var btn1 = document.getElementById("myBtn_1");
+			var btn2 = document.getElementById("myBtn_2");
+			var btn3 = document.getElementById("myBtn_3");
+			var btn4 = document.getElementById("myBtn_4");
+			var btn5 = document.getElementById("myBtn_5");
+			var btn6 = document.getElementById("myBtn_6");
+			var btn7 = document.getElementById("myBtn_7");
+			var btn8 = document.getElementById("myBtn_8");
+			var btn9 = document.getElementById("myBtn_9");
+			var btn10 = document.getElementById("myBtn_10");
+			var btn11 = document.getElementById("myBtn_11");
+			var btn12 = document.getElementById("myBtn_12");
+			var btn13 = document.getElementById("myBtn_13");
+			var btn14 = document.getElementById("myBtn_14");
+		  var span = document.getElementsByClassName("close")[0];
+		    var span2 = document.getElementsByClassName("close2")[0];
+		   var span3 = document.getElementsByClassName("close3")[0];
+		   var span4 = document.getElementsByClassName("close4")[0];
+		  
+		  
+		  	btn1.onclick = function() {
+				dummystore=1;
+				document.getElementById("pic").src= "pages/page_01.jpg";
+				modal.style.display = "block";
+		  	}
+		  
+		  	btn2.onclick = function() {
+			  	dummystore=2;
+				document.getElementById("pic").src= "pages/page_02.jpg";
+  				modal.style.display = "block";
+			}
+				  
+			btn3.onclick = function() {
+			 	dummystore=1;
+			  	document.getElementById("pic").src= "pages/page_03.jpg";
+  				modal.style.display = "block";
+		  	}
+			
+			
+			
+		  
+		  	btn4.onclick = function() {
+			  	dummystore=2;
+				document.getElementById("pic2").src= "pages/page_04.jpg";
+  				modal2.style.display = "block";
+			}
+				  
+			btn5.onclick = function() {
+				 dummystore=1;
+				 document.getElementById("pic2").src= "pages/page_05.jpg";
+  				 modal2.style.display = "block";
+		  	}
+		  
+		  	btn6.onclick = function() {
+			  	dummystore=2;
+				document.getElementById("pic2").src= "pages/page_06.jpg";
+  				modal2.style.display = "block";
+			}
+			btn7.onclick = function() {
+			  	dummystore=2;
+				document.getElementById("pic2").src= "pages/page_07.jpg";
+  				modal2.style.display = "block";
+			}
+			
+			
+			btn8.onclick = function() {
+			  	dummystore=2;
+				document.getElementById("pic3").src= "pages/page_08.jpg";
+  				modal3.style.display = "block";
+			}
+			btn9.onclick = function() {
+			  	dummystore=2;
+				document.getElementById("pic3").src= "pages/page_09.jpg";
+  				modal3.style.display = "block";
+			}
+			btn10.onclick = function() {
+			  	dummystore=2;
+				document.getElementById("pic3").src= "pages/page_10.jpg";
+  				modal3.style.display = "block";
+			}
+			btn11.onclick = function() {
+			  	dummystore=2;
+				document.getElementById("pic3").src= "pages/page_031.jpg";
+  				modal3.style.display = "block";
+			}
+			btn12.onclick = function() {
+			  	dummystore=2;
+				document.getElementById("pic3").src= "pages/page_041.jpg";
+  				modal3.style.display = "block";
+			}
+			
+			
+			
+			btn13.onclick = function() {
+			  	dummystore=2;
+				document.getElementById("pic4").src= "pages/page_071.jpg";
+  				modal4.style.display = "block";
+			}
+			btn14.onclick = function() {
+			  	dummystore=2;
+				document.getElementById("pic4").src= "pages/page_072.jpg";
+  				modal4.style.display = "block";
+			}
+				  
+
+
+									
+// When the user clicks on <span> (x), close the modal
+			span.onclick = function() {
+			  modal.style.display = "none";
+			}
+			span2.onclick = function() {
+				modal2.style.display = "none";
+			}
+			span3.onclick = function() {
+				modal3.style.display = "none";
+			}
+			span4.onclick = function() {
+				modal4.style.display = "none";
+			}
+// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+			  if (event.target == modal) {
+				   modal.style.display = "none";
+				   modal2.style.display = "none";
+				   modal3.style.display = "none";
+				   modal4.style.display = "none";
+			  }
+			}
+			
+			
+</script> 
+<script src="js/script.js"></script>
+</body>
+</html>
